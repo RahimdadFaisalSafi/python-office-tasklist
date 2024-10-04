@@ -15,7 +15,7 @@ def add_task():
         tasks.append({"Aufgabe": task})
         print(f"Die Aufgabe '{task}' wurde zur Liste hinzugefügt.")
 
-add_task()
+
 
 # Funktion zum Anzeigen der Aufgabenliste
 def show_tasklist():
@@ -37,4 +37,30 @@ def show_tasklist():
             print(task_str)
 
 
-show_tasklist()
+
+# Hauptfunktion mit Menü
+def main():
+    while True:
+        print("\nWas möchtest du tun?")
+        print("1. Aufgabe hinzufügen")
+        print("2. Aufgabenliste anzeigen")
+        print("3. Aufgabe entfernen")
+        print("4. Programm beenden")
+        
+        choice = input("Bitte gib eine Nummer ein (1-4): ")
+        
+        if choice == "1":
+            add_task()
+        elif choice == "2":
+            show_tasklist()
+        elif choice == "3":
+            remove_task()
+        elif choice == "4":
+            print("Programm beendet. Auf Wiedersehen!")
+            break
+        else:
+            print("Ungültige Auswahl. Bitte wähle eine Option zwischen 1 und 4.")
+
+# Starte das Programm
+if __name__ == "__main__":
+    main()
